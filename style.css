@@ -1,0 +1,238 @@
+:root {
+    --box-shadow: 0px 8px 11px 0px rgba(0,0,0,0.20);
+    --text: #00005A;
+    --highlight: #1D44DF;
+    --text-shadow: 0px 5px 11px rgba(0,0,0,0.23);
+    --grey: #D6D6D6;
+}
+body {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 425px;
+}
+
+a, button {
+    text-decoration: none;
+    color: white;
+    border: none;
+}
+
+input:focus, button:focus {
+    outline: none;
+}
+
+svg {
+    max-width: 425px;
+    height: calc(auto - 50px);
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    height: 80vh;
+    margin-top: 90px;
+}
+
+header {
+    width: 70%;
+    font-family: 'Lobster';
+    font-size: 2em;
+    color: var(--text);
+    text-shadow: var(--text-shadow);
+    line-height: 1.2em;
+    margin: 20px 0;
+    align-self: flex-start;
+    margin-left: 10%;
+}
+
+header .highlight {
+    color: var(--highlight);
+}
+
+.bg-img {
+    background: url('bg.jpg') no-repeat;
+    width: 100%;
+    display: block;
+    padding-bottom: 76%; /*Rodyti background be nustatyto height ir contento */
+    background-size: 100%;
+}
+
+#search-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.search-btn {
+    background: var(--highlight);
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.8em;
+    border-radius: 50%;
+    position: relative;
+    margin: 15px 0;
+}
+
+.search-btn:before,
+.search-btn:after {
+	content: '';
+	display: block;
+	position: absolute;
+	border-radius: 50%;
+    border: 5px solid rgba(29,68,223,0.4);
+	left: -10px;
+	top: -10px;
+	right: -10px;
+    bottom: -10px;
+    animation: pulse 2s linear infinite;
+    opacity: 0;
+    backface-visibility: hidden;
+}
+
+.search-btn:after {
+    animation-delay: .7s;
+    border: 5px solid rgba(29,68,223,0.5);
+}
+
+.search-field {
+    width: 0;
+    box-sizing: border-box;
+    align-self: center;
+    border: none;
+    border-bottom: 1px solid var(--highlight);
+    font-family: 'Roboto';
+    font-size: 1.2em;
+    transition: .4s ease-in-out all;
+}
+
+#card-container {
+    position: absolute;
+    z-index: 1;
+    margin-top: 10%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding: 20px 0 20px 20px;
+    box-sizing: border-box;
+}
+
+/* #card-container::-webkit-scrollbar, .about::-webkit-scrollbar {
+    display: none;
+} */
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    margin-right: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    background-size: cover;
+}
+
+/* opacity backgroundui */
+
+.card::before {
+    content: "";
+    background: black;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+    border-radius: 10px;
+  }
+
+.card-info {
+    font-family: 'Cambria';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 250px;
+    white-space: normal;
+    color: white;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+.card-info h1, h2, h3 {
+    font-family: 'Roboto';
+    padding: 0;
+    margin: 0;
+    font-weight: 100;
+}
+
+.card-info h1 {
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1em;
+}
+.card-info h2, h3 {
+    color: var(--grey);
+    font-weight: 700;
+    font-size: .9em;
+    height: 1em;
+    overflow: hidden;
+}
+.card-info h3 {
+    font-weight: 300;
+    font-size: .8em;
+    margin-top: 3px;
+}
+
+.about {
+    margin-top: 20px;
+    height: 180px;
+    overflow-y: scroll;
+}
+
+.imdb {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+span.top {
+    font-size: 2.3em;
+}
+span.bot {
+    font-size: .8em;
+}
+
+
+/* ----------------------- ANIMATIONS ----------------------------- */
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}

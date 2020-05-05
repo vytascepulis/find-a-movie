@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie find</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,400;0,700;1,300;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- HEADER SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="480" height="165" viewBox="0 0 480 165"><defs><clipPath id="a"><rect width="480" height="165" fill="rgba(255,255,255,0)"/></clipPath><linearGradient id="b" x1="0.863" y1="0.133" x2="0.325" y2="1.048" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#1d44df"/><stop offset="1" stop-color="#1d8eff"/></linearGradient><filter id="c" x="-379" y="-175" width="1239" height="351" filterUnits="userSpaceOnUse"><feOffset input="SourceAlpha"/><feGaussianBlur stdDeviation="20" result="d"/><feFlood flood-opacity="0.369"/><feComposite operator="in" in2="d"/><feComposite in="SourceGraphic"/></filter></defs><g clip-path="url(#a)"><g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#c)"><ellipse cx="559.5" cy="115.5" rx="559.5" ry="115.5" transform="translate(-319 -115)" fill="url(#b)"/></g></g></svg>
+    <!-- HEADER SVG END -->
+
+    <main>
+        <header>What are you going to watch <span class="highlight">tonight?</span></header>
+        <div class="bg-img"></div>
+        <div id="card-container"></div>
+        </div>
+        <form id="search-form">
+            <input class="search-field" type="text" placeholder="The Dark Knight" autocomplete="off" spellcheck="false">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </form>
+    </main>
+
+<script src="app.js"></script>
+</body>
+</html>
